@@ -1,0 +1,503 @@
+/* Page visibility */
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* Auth roles */
+body.not-authenticated .role-logged-in {
+  display: none;
+}
+
+body.authenticated .role-logged-out {
+  display: none;
+}
+
+/* Admin role */
+.role-admin {
+  display: none;
+}
+
+body.is-admin .role-admin {
+  display: block;
+}
+
+/* --------------------------------------- */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global font for the whole page */
+html,
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+}
+
+.navleft {
+  flex: 1;
+  font-weight: bold;
+}
+
+.navright {
+  display: flex;
+  flex-direction: column;
+  align-items: last baseline;
+  gap: 8px;
+}
+
+.navright a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.navright a:hover {
+  text-decoration: underline;
+}
+
+.words {
+  list-style-type: disc;
+  padding-left: 25px;
+  line-height: 1.6;
+}
+
+/*----------------------------------------------------------------------------------*/
+
+/* Container styling */
+.form-container {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+/* Input group spacing */
+.input-group {
+  margin-bottom: 15px;
+}
+
+/* Labels */
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Inputs */
+.input-group input {
+  width: 50%;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Button container */
+.button-group {
+  display: flex;
+  justify-content: left;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+/* Signup button */
+.signup-btn {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Hover for signup button */
+.signup-btn:hover {
+  background-color: darkgreen;
+}
+
+/* Cancel button */
+.cancel-btn {
+  background-color: gray;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Hover for cancel button */
+.cancel-btn:hover {
+  background-color: red;
+}
+
+/*-----------------------Dropdown-----------------------------------------------------------*/
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #333;
+  min-width: 150px;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Links inside dropdown */
+.dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+}
+
+/* Keep admin-only dropdown links hidden unless body has is-admin */
+.dropdown-menu a.role-admin {
+  display: none;
+}
+
+body.is-admin .dropdown-menu a.role-admin {
+  display: block;
+}
+
+/* Hover effect */
+.dropdown-menu a:hover {
+  background-color: #555;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-separator {
+  height: 1px;
+  background-color: #666;
+  margin: 5px 0;
+}
+
+/* Style logout differently */
+.dropdown-menu a.logout {
+  color: #e74c3c;
+}
+
+
+
+.box {
+  width: 300px;
+  height: 150px;
+  background-color: #ffffff;
+  border: 1px solid #333;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 8px;
+
+}
+
+.edit-btn {
+  background-color: transparent;
+  color: #00bdde;
+  border: 1px solid #00bdde;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+/* Optional: green background on hover */
+.edit-btn:hover {
+  background-color: #00bdde;
+  color: white;
+}
+
+
+/* verify button*/
+.verify-button {
+  display: flex;
+  justify-content: left;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.emaiverify {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.gotologin {
+  background-color: gray;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* login button*/
+.login-btn {
+  background-color: #0082fc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Employees table*/
+
+/* Page styling */
+body {
+  background-color: #f8f9fa;
+}
+
+/* Table */
+table th,
+table td {
+  vertical-align: middle;
+}
+
+/* Card Styling */
+.card {
+  border-radius: 8px;
+}
+
+/* Form Inputs */
+form label {
+  font-weight: 500;
+}
+
+/* Buttons */
+.btn-save {
+  margin-right: 5px;
+}
+
+/* Optional hover effect for inputs */
+.form-control:focus {
+  box-shadow: 0 0 4px rgba(52, 152, 219, 0.6);
+}
+
+/* Optional: Add subtle border to the whole container */
+.container {
+  max-width: 850px;
+}
+
+
+
+
+/*Departments*/
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.add-btn {
+  background-color: #28a745;
+  border: none;
+  padding: 8px 15px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
+.add-btn:hover {
+  background-color: #218838;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  text-align: left;
+  background: #fff;
+}
+
+tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+.edit-btn {
+  padding: 6px 12px;
+  border: 1px solid #007bff;
+  background: #e6f0ff;
+  color: #007bff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.edit-btn:hover {
+  background: #d9e9ff;
+}
+
+.delete-btn {
+  padding: 6px 12px;
+  border: 1px solid #dc3545;
+  background: #ffe6e9;
+  color: #dc3545;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.delete-btn:hover {
+  background: #ffdadf;
+}
+
+
+
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal-content {
+  background: #fff;
+  width: 420px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.close {
+  font-size: 22px;
+  text-decoration: none;
+  color: #000;
+}
+
+.form-label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Items */
+.item-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.item-name {
+  flex: 2;
+  padding: 8px;
+}
+
+.item-qty {
+  width: 60px;
+  padding: 8px;
+  text-align: center;
+}
+
+/* Buttons */
+.btn-add {
+  width: 36px;
+  border: 1px solid #ccc;
+  background: #f8f9fa;
+  cursor: pointer;
+}
+
+.btn-remove,
+.item-remove {
+  width: 36px;
+  border: 1px solid #dc3545;
+  background: #fff;
+  color: #dc3545;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #0d6efd;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.btn-success {
+  background: #198754;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
